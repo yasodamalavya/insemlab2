@@ -69,12 +69,12 @@ spec:
           command: ['sh', '-c', 'until nc -z mysql 3306; do echo waiting for mysql; sleep 2; done;']
       containers:
         - name: backend
-          image: srithar1234/ecommerce-backend1:v1
+          image: yasodamalavya/labbackend:latest
           ports:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/ecommerce
+              value: jdbc:mysql://mysql:3306/quiz
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
@@ -115,7 +115,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: srithar1234/ecommerce-frontend1:v1
+          image: yasodamalavya/labfrontend:latest
           ports:
             - containerPort: 8080
           env:
